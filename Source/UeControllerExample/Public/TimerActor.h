@@ -16,12 +16,15 @@ public:
 	// Sets default values for this actor's properties
 	ATimerActor();
 	//倒计时参数配置
+	UPROPERTY(EditAnywhere)
 	int32 CountTime;
 	UTextRenderComponent* CountText;
 	void UpdateTime();
 	//定时器函数和参数声明
 	void Timer();
+	UFUNCTION(BlueprintImplementableEvent)
 	void TimerFinish();
+	virtual void TimerHasFinished_Implementation();
 	FTimerHandle TimerHandle;
 
 protected:
