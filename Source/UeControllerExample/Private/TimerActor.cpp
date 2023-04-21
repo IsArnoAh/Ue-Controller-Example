@@ -20,15 +20,10 @@ ATimerActor::ATimerActor()
 void ATimerActor::BeginPlay()
 {
 	Super::BeginPlay();
-	UpdateTime();
+	Timer();
 	GetWorldTimerManager().SetTimer(TimerHandle,this
 		,&ATimerActor::Timer,1.0f,true);
 	
-}
-
-void ATimerActor::UpdateTime()
-{
-	CountText->SetText(FText::FromString(FString::FromInt(FMath::Max(CountTime, 0))));
 }
 
 // Called every frame
@@ -40,9 +35,9 @@ void ATimerActor::Tick(float DeltaTime)
 
 void ATimerActor::Timer()
 {
+	CountText->SetText(FText::FromString(FString::FromInt(FMath::Max(CountTime, 0))));
 	CountTime--;
-	UpdateTime();
-	if (CountTime<1)
+	if (CountTime<0)
 	{
 		GetWorldTimerManager().ClearTimer(TimerHandle);
 		TimerFinish();

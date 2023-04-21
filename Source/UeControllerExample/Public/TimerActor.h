@@ -19,7 +19,6 @@ public:
 	UPROPERTY(EditAnywhere)
 	int32 CountTime;
 	UTextRenderComponent* CountText;
-	void UpdateTime();
 	//定时器函数和参数声明
 	void Timer();
 	UFUNCTION(BlueprintNativeEvent)
