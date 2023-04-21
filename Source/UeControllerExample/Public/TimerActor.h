@@ -22,9 +22,10 @@ public:
 	void UpdateTime();
 	//定时器函数和参数声明
 	void Timer();
-	UFUNCTION(BlueprintImplementableEvent)
+	UFUNCTION(BlueprintNativeEvent)
 	void TimerFinish();
-	virtual void TimerHasFinished_Implementation();
+	virtual void TimerFinish_Implementation();
+	
 	FTimerHandle TimerHandle;
 
 protected:

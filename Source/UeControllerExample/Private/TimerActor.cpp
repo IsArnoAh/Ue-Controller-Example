@@ -49,10 +49,12 @@ void ATimerActor::Timer()
 	}
 }
 
-void ATimerActor::TimerHasFinished_Implementation()
+void ATimerActor::TimerFinish_Implementation()
 {
 	CountText->SetText(FText::FromString("GO"));
 }
+
+
 
 
 
